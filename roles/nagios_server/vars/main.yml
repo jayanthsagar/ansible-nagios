@@ -1,0 +1,39 @@
+---
+########################################
+## vars used by configure_servers.yml ##
+########################################
+  nagios_hosts: 
+   - { name: "reverse-proxy", address: "http.vlabs.ac.in", web: true }
+   - { name: "dns", address: "ns1-pub.vlabs.ac.in", basic_services: true }
+   - { name: "pubdns2", address: "ns2-pub.vlabs.ac.in", web: true}
+  nagios_host_groups:
+   - name: "basic_services"
+     alias: "basic service checks"
+     checks:
+       - { command: "check_ssh", description: "SSH"}
+       - { command: "check_ping!100.0,20%!500.0,60%", description: "PING"}
+
+   - name: "web"
+     alias: "web service checks"
+     checks:
+       - { command: "check_ssh", description: "SSH"}
+       - { command: "check_http", description: "HTTP"}
+       - { command: "check_tcp!443", description: "HTTPS"}
+       - { command: "check_ping!100.0,20%!500.0,60%", description: "PING"}
+#########################################
+## vars used by configure_services.yml ##
+#########################################
+  service_groups:
+    basic_services:
+     - { service: "ssh", command: "check_ssh" }
+     - { service: "ping", command: "check_ping!100.0,20%!500.0,60%" }
+
+    web:
+     - { service: "ssh", command: "check_ssh" }
+     - { service: "http", command: "check_http" }
+     - { service: "https", command: "check_tcp!443" }
+     - { service: "ping", command: "check_ping!100.0,20%!500.0,60%" }
+
+  hosts:
+   pvtdns: { hostname: "ns3-pvt.vlabs.ac.in", group: web }
+   pubdns: { hostname: "ns2-pub.vlabs.ac.in", group: basic_services } 

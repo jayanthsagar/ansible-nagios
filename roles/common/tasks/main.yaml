@@ -1,0 +1,29 @@
+---
+#- name: Install epel
+#  yum: name=epel-release state=installed
+#  environment: proxy_env
+
+- name: Adding EPEL repo
+  command: "rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
+  environment: proxy_env
+  ignore_errors: yes
+
+
+#Restart iptables
+#- name: Restart iptables service 
+#checking whether iptables is running is pointless
+#restart would fail if there is no /etc/sysconfig/iptables file
+#  service: name=iptables state=restarted
+#  ignore_errors: yes
+
+
+
+
+#SMTP configuration
+- name: Install sendmail SMTP server for outgoing email
+  yum: name=sendmail state=installed
+  environment: proxy_env
+
+- name: Ensure that sendmail is running and enabled
+  service: name=sendmail enabled=yes state=started
+

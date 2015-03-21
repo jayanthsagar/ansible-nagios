@@ -1,0 +1,18 @@
+{#  print filter(lambda x: x['server'] == item, hosts)[0] %}#}
+define host {
+use 		linux-server
+alias		{{ item }}
+host_name	{{ item }}
+address		{{ hosts[item].hostname }}		
+}
+
+
+{% for s in service_groups[hosts[item].group] %}
+
+define service {
+use 			generic-service
+host_name 	        {{ item }}
+service_description	{{ s.service }}
+check_command		{{ s.command }}
+}
+{% endfor %}
