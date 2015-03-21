@@ -8,7 +8,7 @@ Directory structure:
 ├── nagios_server.yml(This yml script implements two roles common and nagios_server)
 ├── README.md
 └── roles
-    ├── common
+├── common
     │   ├── files
     │   │   └── history.sh
     │   ├── handlers
