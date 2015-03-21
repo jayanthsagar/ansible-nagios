@@ -1,0 +1,5 @@
+[nagios_server]
+#multiple-ok
+#10.4.15.207
+10.4.15.114
+
