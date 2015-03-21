@@ -5,7 +5,7 @@ Directory structure:
 .
 ├── hosts
 │   └── host_only(machines on which nagios server has to installed)
-├── nagios_server.yml(This yml script implements two roles common and nagios_server)
+├── nagios_server.yml(This script implements two roles common & nagios_server)
 ├── README.md
 └── roles
     ├── common
