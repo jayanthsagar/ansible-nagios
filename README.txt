@@ -4,9 +4,10 @@ Ansible script to bringup a Nagios monitoring system and setup basic checks on h
 Directory structure:
 .
 ├── hosts
-│   └── host_only(machines on which nagios server has to installed)
-├── nagios_server.yml(This script implements two roles common & nagios_server)
-├── README.md
+│   └── host_only
+├── nagios_client.yml
+├── nagios_server.yml
+├── README.txt
 └── roles
     ├── common
     │   ├── files
@@ -25,7 +26,14 @@ Directory structure:
     │   └── vars
     │       └── main.yml
     ├── nagios_client
-    │   └── inprogress.txt
+    │   ├── defaults
+    │   │   └── main.yml
+    │   ├── handlers
+    │   │   └── main.yml
+    │   ├── tasks
+    │   │   └── main.yml
+    │   └── templates
+    │       └── xinetd.conf.j2
     └── nagios_server
         ├── defaults
         │   └── main.yml
