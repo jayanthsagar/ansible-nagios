@@ -1,3 +1,12 @@
+O.S requirements:
+Doing all thr roles development and testing on CentOS machines for now.
+Need to implement the same for ubuntu or debian based linux(future work)
+
+Description of roles:
+There are two roles implemented in this repository
+1. nagios-server.
+2. nagios-client.
+
 # ansible-nagios
 Ansible script to bringup a Nagios monitoring system and setup basic checks on hosts
 
