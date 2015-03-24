@@ -29,9 +29,9 @@
 ## adding cfg_dir=/etc/nagios/servers in nagios.cfg file ##
 ###########################################################
 
-- name: updating nagios.cfg
-  lineinfile: dest="{{nagios_cfg_path}}" line="cfg_dir=/etc/nagios/servers" regexp="cfg_dir\=/etc/nagios/servers"
-  notify: restart nagios
+#- name: updating nagios.cfg
+#  lineinfile: dest="{{nagios_cfg_path}}" line="cfg_dir=/etc/nagios/servers" regexp="cfg_dir\=/etc/nagios/servers"
+#  notify: restart nagios
 
 #####################################################################
 ## updating servers by defining hosts and services to be monitored ##

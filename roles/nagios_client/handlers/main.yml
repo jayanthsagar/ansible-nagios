@@ -1,0 +1,8 @@
+- name: restart xinetd
+  sudo: true
+  service: name=xinetd state=restarted
+  
+
+- name: restart nrpe
+  sudo: true
+  service: name=nrpe state=restarted

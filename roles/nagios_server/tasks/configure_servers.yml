@@ -32,12 +32,12 @@
   lineinfile: dest=/etc/nagios/nagios.cfg line="cfg_file=/etc/nagios/objects/services.cfg" regexp="cfg_file\=/etc/nagios/objects/services\.cfg"
 
 # Additional Commands
-#- name: "create additional_commands.cfg"
-#  notify: restart nagios
-#  template: src=commands.cfg dest=/etc/nagios/objects/additional_commands.cfg mode=664
+- name: "create additional_commands.cfg"
+  notify: restart nagios
+  template: src=commands.cfg dest=/etc/nagios/objects/additional_commands.cfg mode=664
 
-#- name: load additional_commands.cfg
-#  notify: restart nagios
-#  lineinfile: dest=/etc/nagios/nagios.cfg line="cfg_file=/etc/nagios/objects/additional_commands.cfg" regexp="cfg_file\=/etc/nagios/objects/additional_commands\.cfg"
+- name: load additional_commands.cfg
+  notify: restart nagios
+  lineinfile: dest=/etc/nagios/nagios.cfg line="cfg_file=/etc/nagios/objects/additional_commands.cfg" regexp="cfg_file\=/etc/nagios/objects/additional_commands\.cfg"
 
 
