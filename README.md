@@ -1,4 +1,5 @@
-## [![Ansible project](http://vlead.virtual-labs.ac.in/VLEAD-small.png)](http://vlead.virtual-labs.ac.in) Ansible script for VLEAD
+## [![Ansible project](http://vlead.virtual-labs.ac.in/VLEAD-small.png)](http://vlead.virtual-labs.ac.in)
+# Nagios Ansible script for VLEAD
 
 ###O.S requirements:
 Doing all the roles development and testing on CentOS machines for now.
