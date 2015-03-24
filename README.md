@@ -1,8 +1,8 @@
-O.S requirements:
+###O.S requirements:
 Doing all thr roles development and testing on CentOS machines for now.
 Need to implement the same for ubuntu or debian based linux(future work)
 
-Description of roles:
+###Description of roles:
 There are two roles implemented in this repository
 1. common.
 2. common_vars.
