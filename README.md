@@ -13,8 +13,7 @@ There are two roles implemented in this repository
 Ansible script to bringup a Nagios monitoring system and setup basic checks on hosts
 
 Directory structure:
-'''
-.
+```
 ├── hosts
 │   └── host_only(machines on which nagios server has to installed)
 ├── nagios_client.yml
@@ -64,4 +63,4 @@ Directory structure:
         │   └── services.cfg
         └── vars
             └── main.yml
-'''
+    ```
