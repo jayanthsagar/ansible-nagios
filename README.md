@@ -39,25 +39,24 @@ Directory structure:
     │       └── main.yaml
     ├── common_vars
     │   └── vars
-    │       └── main.yml
+    │       └── main.yaml
     ├── nagios_client
     │   ├── defaults
-    │   │   └── main.yml
+    │   │   └── main.yaml
     │   ├── handlers
-    │   │   └── main.yml
+    │   │   └── main.yaml
     │   ├── tasks
-    │   │   └── main.yml
+    │   │   └── main.yaml
     │   └── templates
     │       └── xinetd.conf.j2
     └── nagios_server
         ├── defaults
-        │   └── main.yml
+        │   └── main.yaml
         ├── handlers
-        │   └── main.yml
+        │   └── main.yaml
         ├── tasks
-        │   ├── configure_servers.yml
-        │   ├── configure_services.yml
-        │   └── main.yml
+        │   ├── configure_servers.yaml
+        │   └── main.yaml
         ├── templates
         │   ├── commands.cfg
         │   ├── configure_services.j2
@@ -66,5 +65,5 @@ Directory structure:
         │   ├── hosts.cfg
         │   └── services.cfg
         └── vars
-            └── main.yml
+            └── main.yaml
     
