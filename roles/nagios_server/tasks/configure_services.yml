@@ -1,6 +1,0 @@
----
-- name: cofiguring servers in /etc/servers/
-  notify: restart nagios
-  template: src=configure_services.j2 dest=/etc/nagios/servers/{{item}}.cfg mode=664
-# with_items: {% [i['server'] for i in hosts] %}
-  with_items: ["pvtdns", "pubdns"]

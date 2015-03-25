@@ -1,8 +1,0 @@
----
-- name: This yml script configures nagios server
-  hosts: nagios_server
-  remote_user: root
-
-  roles:
-    - common
-    - nagios_server

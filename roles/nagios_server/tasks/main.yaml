@@ -38,7 +38,7 @@
 ######################################################################
 
 - tasks:
-  include: configure_servers.yml
+  include: configure_servers.yaml
 
 #- tasks:
 #  include: configure_services.yml

@@ -1,7 +1,0 @@
-nagios_host: nagios.virtual-labs.ac.in
-nagios_user: nagiosadmin
-nagios_password: xxxxxxx
-nagios_admin_name: 'Nagios Admin'
-nagios_admin_email: jayanth@vlabs.ac.in
-nagios_cfg_path: /etc/nagios/nagios.cfg
-nrpe_cfg_path: /etc/nagios/nrpe.cfg
