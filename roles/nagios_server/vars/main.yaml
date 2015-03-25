@@ -1,0 +1,29 @@
+---
+########################################
+## vars used by configure_servers.yml ##
+########################################
+  nagios_hosts: 
+   - { name: "reverse-proxy", address: "http.vlabs.ac.in", web: true, basic_services: true }
+   - { name: "dns", address: "ns1-pub.vlabs.ac.in", basic_services: true }
+   - { name: "pubdns2", address: "ns2-pub.vlabs.ac.in", web: true, basic_services: true }
+   - { name: "host1 with nrpe", address: "10.4.15.116", basic_services: true }
+   - { name: "host2 with nrpe", address: "10.4.15.117", basic_services: true }
+
+  nagios_host_groups:
+   - name: "basic_services"
+     alias: "basic service checks"
+     checks:
+       - { command: "check_ssh", description: "SSH"}
+       - { command: "check_ping!100.0,20%!500.0,60%", description: "PING"}
+       - { command: "check_nrpe!check_load", description: "NRPE check checking load"}
+       - { command: "check_nrpe!check_users", description: "NRPE checking users"}
+
+   - name: "web"
+     alias: "web service checks"
+     checks:
+       - { command: "check_http", description: "HTTP"}
+       - { command: "check_tcp!443", description: "HTTPS"}
+       
+  nagios_commands:
+    - {name: 'check_nrpe', command: '$USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$'}
+
